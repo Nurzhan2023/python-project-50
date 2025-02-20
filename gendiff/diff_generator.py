@@ -1,5 +1,6 @@
 from gendiff.read import read_file
 
+
 def generate_diff(file_path1, file_path2):
     data1 = read_file(file_path1)
     data2 = read_file(file_path2)
