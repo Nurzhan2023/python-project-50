@@ -1,0 +1,6 @@
+*.egg-info
+.venv
+__pycache__/
+generate_diff.py
+dist/
+
