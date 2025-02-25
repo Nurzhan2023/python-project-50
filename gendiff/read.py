@@ -1,7 +1,6 @@
 # gendiff/read.py
 
 import json
-import os
 
 
 def read_file(file_path):
