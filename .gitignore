@@ -3,4 +3,8 @@
 __pycache__/
 generate_diff.py
 dist/
-
+coverage.xml
+.coverage
+hello.py
+demo.cast
+.python-version
