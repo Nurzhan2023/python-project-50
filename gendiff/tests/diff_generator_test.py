@@ -55,4 +55,3 @@ def test_generate_diff(file1, file2, expected_result):
         f.write(actual_result)  # Записываем новый ожидаемый результат
 
     assert " ".join(actual_result.split()) == " ".join(expected_result.split())
-
