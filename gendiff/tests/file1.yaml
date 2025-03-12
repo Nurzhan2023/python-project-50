@@ -1,0 +1,5 @@
+# file1.yaml
+follow: false
+host: hexlet.io
+proxy: 123.124.53.22
+timeout: 50

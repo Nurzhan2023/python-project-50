@@ -1,3 +1,4 @@
+# gendiff/scripts/gendiff.py
 from gendiff.parser import args_parser
 
 
