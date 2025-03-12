@@ -16,7 +16,7 @@ from gendiff.diff_generator import generate_diff
         }
         setting6: {
             doge: {
-              - wow:
+              - wow: 
               + wow: so much
             }
             key: value

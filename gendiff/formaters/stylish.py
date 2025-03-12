@@ -15,7 +15,7 @@ def format_value(value, depth):
     if value is None:
         return "null"
 
-    return value
+    return f" {value}"
 
 
 def format_stylish(diff, depth=0):
@@ -39,7 +39,7 @@ def format_stylish(diff, depth=0):
         elif status == "modified":
             lines.append(
                 f"{indent}  - {key}:"
-                f" {format_value(info['old_value'], depth + 1)}"
+                f"{format_value(info['old_value'], depth + 1)}"
             )
             lines.append(
                 f"{indent}  + {key}:"
