@@ -1,9 +1,4 @@
-import pytest
-from gendiff.diff_generator import generate_diff
-
-
-@pytest.mark.parametrize("file1, file2, expected_result", [
-    ("gendiff/tests/file1.json", "gendiff/tests/file2.json", """{
+{
     common: {
       + follow: false
         setting1: Value 1
@@ -46,13 +41,4 @@ from gendiff.diff_generator import generate_diff
         }
         fee: 100500
     }
-}""")
-])
-def test_generate_diff(file1, file2, expected_result):
-    actual_result = generate_diff(file1, file2, format_name="stylish")
-
-    with open("gendiff/tests/expected_result.txt", "w") as f:
-        f.write(actual_result)  # Записываем новый ожидаемый результат
-
-    assert " ".join(actual_result.split()) == " ".join(expected_result.split())
-
+}
