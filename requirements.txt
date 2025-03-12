@@ -2,3 +2,4 @@ flake8==7.1.2
 make==0.1.6.post2
 pytest==8.3.4
 uv==0.5.21
+PyYAML==6.0.2
