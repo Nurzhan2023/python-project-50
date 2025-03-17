@@ -18,7 +18,6 @@ def test_generate_diff(file1, file2, expected_file):
     with open(expected_file, "r") as f:
         expected_result = f.read().strip()
 
-    # Улучшенная нормализация пробелов
     def normalize_text(text):
         text = re.sub(r'\s*:\s*', ': ', text)  # Ровный пробел перед двоеточием
         text = re.sub(r'\s*{\s*', ' { ', text)  # Ровный пробел перед `{`
