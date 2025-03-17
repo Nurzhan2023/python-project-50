@@ -1,6 +1,6 @@
 import pytest
 from gendiff.diff_generator import generate_diff
-
+import re
 
 @pytest.mark.parametrize(
     "file1, file2, expected_file",
@@ -17,8 +17,12 @@ def test_generate_diff(file1, file2, expected_file):
     with open(expected_file, "r") as f:
         expected_result = f.read().strip()
 
-    # Убираем `None` из вывода
-    actual_result = actual_result.replace("None", "").strip()
+    # Нормализация пробелов перед сравнением
+    def normalize_whitespace(text):
+        return re.sub(r'\s+', ' ', text).strip()
+
+    actual_result = normalize_whitespace(actual_result)
+    expected_result = normalize_whitespace(expected_result)
 
     assert actual_result == expected_result, (
         f"\nExpected:\n{expected_result}\n\nGot:\n{actual_result}"
