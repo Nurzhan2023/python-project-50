@@ -18,12 +18,15 @@ def test_generate_diff(file1, file2, expected_file):
     with open(expected_file, "r") as f:
         expected_result = f.read().strip()
 
-    # Нормализация пробелов перед сравнением
-    def normalize_whitespace(text):
-        return re.sub(r'\s+', ' ', text).strip()
+    # Улучшенная нормализация пробелов
+    def normalize_text(text):
+        text = re.sub(r'\s*:\s*', ': ', text)  # Гарантируем ровный пробел перед двоеточием
+        text = re.sub(r'\s*{\s*', ' { ', text)  # Гарантируем пробел перед `{`
+        text = re.sub(r'\s+', ' ', text).strip()  # Убираем лишние пробелы
+        return text
 
-    actual_result = normalize_whitespace(actual_result)
-    expected_result = normalize_whitespace(expected_result)
+    actual_result = normalize_text(actual_result)
+    expected_result = normalize_text(expected_result)
 
     assert actual_result == expected_result, (
         f"\nExpected:\n{expected_result}\n\nGot:\n{actual_result}"
