@@ -20,8 +20,8 @@ def test_generate_diff(file1, file2, expected_file):
 
     # Улучшенная нормализация пробелов
     def normalize_text(text):
-        text = re.sub(r'\s*:\s*', ': ', text)  # Гарантируем ровный пробел перед двоеточием
-        text = re.sub(r'\s*{\s*', ' { ', text)  # Гарантируем пробел перед `{`
+        text = re.sub(r'\s*:\s*', ': ', text)  # Ровный пробел перед двоеточием
+        text = re.sub(r'\s*{\s*', ' { ', text)  # Ровный пробел перед `{`
         text = re.sub(r'\s+', ' ', text).strip()  # Убираем лишние пробелы
         return text
 
@@ -29,5 +29,6 @@ def test_generate_diff(file1, file2, expected_file):
     expected_result = normalize_text(expected_result)
 
     assert actual_result == expected_result, (
-        f"\nExpected:\n{expected_result}\n\nGot:\n{actual_result}"
+        f"\nExpected:\n{expected_result}\n\n"
+        f"Got:\n{actual_result}"
     )
