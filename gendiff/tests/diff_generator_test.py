@@ -1,6 +1,7 @@
 import pytest
 from gendiff.diff_generator import generate_diff
 
+
 @pytest.mark.parametrize(
     "file1, file2, expected_file",
     [
@@ -10,8 +11,6 @@ from gendiff.diff_generator import generate_diff
          "gendiff/tests/expected_result_yaml.txt")
     ]
 )
-
-
 def test_generate_diff(file1, file2, expected_file):
     actual_result = generate_diff(file1, file2, format_name="stylish").strip()
 
