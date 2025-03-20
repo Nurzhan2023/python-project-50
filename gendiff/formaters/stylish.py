@@ -1,3 +1,4 @@
+# gendiff/formaters/stylish.py
 def format_value(value, depth):
     indent = " " * (depth * 4)
 

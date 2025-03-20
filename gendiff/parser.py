@@ -1,4 +1,3 @@
-# gendiff/parser.py
 import argparse
 from gendiff.diff_generator import generate_diff
 
@@ -15,5 +14,8 @@ def args_parser():
         default="stylish"
     )
     args = parser.parse_args()
-    diff = generate_diff(args.first_file, args.second_file)
+
+
+    diff = generate_diff(args.first_file, args.second_file, 
+                         format_name=args.format)
     print(diff)

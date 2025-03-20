@@ -83,3 +83,5 @@ The project uses GitHub Actions for automated testing and linting. You can see s
 [![asciicast](https://asciinema.org/a/Hc7xhdtxCYwpHkDT0RCYTOhJ9.svg)](https://asciinema.org/a/Hc7xhdtxCYwpHkDT0RCYTOhJ9)
 
 [![asciicast](https://asciinema.org/a/W3OLlaIN5eQ1MMhkHUFwjiR6M.svg)](https://asciinema.org/a/W3OLlaIN5eQ1MMhkHUFwjiR6M)
+
+[![asciicast](https://asciinema.org/a/5k2hEC3CIVQ2BDMBAM487ANPy.svg)](https://asciinema.org/a/5k2hEC3CIVQ2BDMBAM487ANPy)

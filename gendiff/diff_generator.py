@@ -1,4 +1,8 @@
+# gendiff/diff_generator.py
 from gendiff.read import read_file
+from gendiff.formaters.stylish import format_stylish
+from gendiff.formaters.plain import format_plain
+from gendiff.formaters.json import format_json
 
 
 def build_diff(data1, data2):
@@ -13,16 +17,16 @@ def build_diff(data1, data2):
         elif isinstance(data1[key], dict) and isinstance(data2[key], dict):
             diff[key] = {
                 "status": "nested",
-                "children": build_diff(
-                    data1[key],
-                    data2[key])}
+                "children": build_diff(data1[key], data2[key])
+            }
         elif data1[key] == data2[key]:
             diff[key] = {"status": "unchanged", "value": data1[key]}
         else:
             diff[key] = {
                 "status": "modified",
                 "old_value": data1[key],
-                "new_value": data2[key]}
+                "new_value": data2[key]
+            }
 
     return diff
 
@@ -33,8 +37,12 @@ def generate_diff(file_path1, file_path2, format_name="stylish"):
 
     diff = build_diff(data1, data2)
 
+    # Выбор форматирования
     if format_name == "stylish":
-        from gendiff.formaters.stylish import format_stylish
         return format_stylish(diff)
-
-    raise ValueError(f"Unsupported format: {format_name}")
+    elif format_name == "plain":
+        return format_plain(diff)
+    elif format_name == "json":
+        return format_json(diff)
+    else:
+        raise ValueError(f"Unsupported format: {format_name}")
