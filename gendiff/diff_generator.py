@@ -5,6 +5,7 @@ from gendiff.formaters.plain import format_plain
 from gendiff.formaters.json import format_json
 
 
+
 def build_diff(data1, data2):
     keys = sorted(set(data1.keys()) | set(data2.keys()))
     diff = {}
