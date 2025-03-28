@@ -7,13 +7,18 @@ from gendiff.diff_generator import generate_diff
     "file1, file2, format_name, expected_file",
     [
         ("gendiff/tests/file1.json", "gendiff/tests/file2.json", "stylish",
-         "gendiff/tests/expected_result_json.txt"),
+         "gendiff/tests/expected_result_stylish.txt"),
         ("gendiff/tests/file1.yaml", "gendiff/tests/file2.yaml", "stylish",
-         "gendiff/tests/expected_result_yaml.txt"),
+         "gendiff/tests/expected_result_stylish.txt"),
         ("gendiff/tests/file1.json", "gendiff/tests/file2.json", "plain",
          "gendiff/tests/expected_result_plain.txt"),
         ("gendiff/tests/file1.yaml", "gendiff/tests/file2.yaml", "plain",
-         "gendiff/tests/expected_result_plain_yaml.txt")
+         "gendiff/tests/expected_result_plain.txt"),
+        ("gendiff/tests/file1.json", "gendiff/tests/file2.json", "json",
+         "gendiff/tests/expected_result_json_format.txt"),
+        ("gendiff/tests/file1.yaml", "gendiff/tests/file2.yaml", "json",
+         "gendiff/tests/expected_result_json_format.txt"),
+
     ]
 )
 def test_generate_diff(file1, file2, format_name, expected_file):
