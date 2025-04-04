@@ -10,14 +10,21 @@ from gendiff.diff_generator import generate_diff
          "gendiff/tests/expected_result_stylish.txt"),
         ("gendiff/tests/file1.yaml", "gendiff/tests/file2.yaml", "stylish",
          "gendiff/tests/expected_result_stylish.txt"),
+        ("gendiff/tests/file1.yml", "gendiff/tests/file2.yml", "stylish",
+         "gendiff/tests/expected_result_stylish.txt"),
         ("gendiff/tests/file1.json", "gendiff/tests/file2.json", "plain",
          "gendiff/tests/expected_result_plain.txt"),
         ("gendiff/tests/file1.yaml", "gendiff/tests/file2.yaml", "plain",
+         "gendiff/tests/expected_result_plain.txt"),
+        ("gendiff/tests/file1.yml", "gendiff/tests/file2.yml", "plain",
          "gendiff/tests/expected_result_plain.txt"),
         ("gendiff/tests/file1.json", "gendiff/tests/file2.json", "json",
          "gendiff/tests/expected_result_json_format.txt"),
         ("gendiff/tests/file1.yaml", "gendiff/tests/file2.yaml", "json",
          "gendiff/tests/expected_result_json_format.txt"),
+        ("gendiff/tests/file1.yml", "gendiff/tests/file2.yml", "json",
+         "gendiff/tests/expected_result_json_format.txt"),
+         
 
     ]
 )
