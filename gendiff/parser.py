@@ -1,5 +1,5 @@
 import argparse
-from gendiff.diff_generator import generate_diff
+from .diff_generator import generate_diff
 
 
 def args_parser():
