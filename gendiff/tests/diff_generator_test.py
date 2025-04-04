@@ -24,9 +24,8 @@ from gendiff.diff_generator import generate_diff
          "gendiff/tests/expected_result_json_format.txt"),
         ("gendiff/tests/file1.yml", "gendiff/tests/file2.yml", "json",
          "gendiff/tests/expected_result_json_format.txt"),
-         
-
     ]
+
 )
 def test_generate_diff(file1, file2, format_name, expected_file):
     actual_result = generate_diff(file1, file2, format_name=format_name).strip()
