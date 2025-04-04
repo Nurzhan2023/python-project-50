@@ -16,7 +16,7 @@ def format_value(value, depth):
     if value is None:
         return "null"
 
-    return f" {value}"
+    return str(value)
 
 
 def format_stylish(diff, depth=0):
