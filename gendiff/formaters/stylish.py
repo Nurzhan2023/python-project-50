@@ -2,13 +2,11 @@ def format_value(value, depth):
     indent = " " * (depth * 4)
 
     if isinstance(value, dict):
-        formatted = ["{"]
+        lines = ["{"]
         for k, v in value.items():
-            formatted.append(
-                f"{indent}    {k}: {format_value(v, depth + 1)}"
-            )
-        formatted.append(f"{indent}}}")
-        return "\n".join(formatted)
+            lines.append(f"{indent}    {k}: {format_value(v, depth + 1)}")
+        lines.append(f"{indent}}}")
+        return "\n".join(lines)
 
     if value is True:
         return "true"
@@ -17,7 +15,8 @@ def format_value(value, depth):
     if value is None:
         return "null"
 
-    return f" {value}"
+    return str(value)
+
 
 
 def format_stylish(diff, depth=0):
